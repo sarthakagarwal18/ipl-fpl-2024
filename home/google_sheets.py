@@ -2,7 +2,7 @@ from google.oauth2.service_account import Credentials
 from googleapiclient.discovery import build
 
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
-SERVICE_ACCOUNT_FILE = '/Users/vasuagarwal/Workspace/django-datta-able/service_account.json'
+SERVICE_ACCOUNT_FILE = 'service_account.json'
 SPREADSHEET_ID = '1Qex3w6Po8WF8jtznaNtkmzBPAB_vk_YJxkhJ0ivxqRE'
 
 credentials = Credentials.from_service_account_file(
