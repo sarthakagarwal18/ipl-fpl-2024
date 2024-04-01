@@ -1,0 +1,251 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% block breadcrumbs %}{% endblock breadcrumbs %}
+
+{% block content %}
+
+  <!-- [ Main Content ] start -->
+  <div class="row">
+    <div class="col-xl-12 col-md-12 m-b-30">
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link active show" id="finalwinnings-tab" data-toggle="tab" href="#finalwinnings" role="tab" aria-controls="finalwinnings"
+            aria-selected="true">Final Winnings</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="overall-tab" data-toggle="tab" href="#overall" role="tab"
+            aria-controls="overall" aria-selected="false">Overall</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="batting-tab" data-toggle="tab" href="#batting" role="tab"
+              aria-controls="batting" aria-selected="false">Batting</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="bowling-tab" data-toggle="tab" href="#bowling" role="tab"
+              aria-controls="bowling" aria-selected="false">Bowling</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="sixes-tab" data-toggle="tab" href="#sixes" role="tab"
+              aria-controls="sixes" aria-selected="false">Sixes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="catches-tab" data-toggle="tab" href="#catches" role="tab"
+              aria-controls="catches" aria-selected="false">Catches</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="max_points-tab" data-toggle="tab" href="#max_points" role="tab"
+              aria-controls="maxpoints" aria-selected="false">Max Points in a Match</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="max_wickets-tab" data-toggle="tab" href="#max_wickets" role="tab"
+              aria-controls="maxwickets" aria-selected="false">Max Wickets in a Match</a>
+          </li>
+      </ul>
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade active show" id="finalwinnings" role="tabpanel" aria-labelledby="finalwinnings-tab">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>Player</th>
+                <th>Winnings</th>
+                <th class="text-right"></th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for row in final_winnings %}
+                <tr>
+                    <td>
+                      <h6 class="m-0"><img class="rounded-circle m-r-10" style="width:40px;"
+                          src="{% static 'assets/images/user/avatar-1.jpg' %}" alt="activity-user">{{ row.0 }}</h6>
+                    </td>
+                    <td>
+                      <h6 class="m-0">₹ {{ row.1 }}</h6>
+                    </td>
+                  </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+
+        <div class="tab-pane fade" id="overall" role="tabpanel" aria-labelledby="overall-tab">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>Player</th>
+                  <th>Winnings</th>
+                  <th class="text-right"></th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for key, value in overall_winnings.items %}
+                  <tr>
+                      <td>
+                        <h6 class="m-0"><img class="rounded-circle m-r-10" style="width:40px;"
+                            src="{% static 'assets/images/user/avatar-1.jpg' %}" alt="activity-user">{{ key }}</h6>
+                      </td>
+                      <td>
+                        <h6 class="m-0">₹ {{ value }}</h6>
+                      </td>
+                    </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+
+          <div class="tab-pane fade" id="batting" role="tabpanel" aria-labelledby="batting-tab">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>Player</th>
+                  <th>Winnings</th>
+                  <th class="text-right"></th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for key, value in batting_winnings.items %}
+                  <tr>
+                      <td>
+                        <h6 class="m-0"><img class="rounded-circle m-r-10" style="width:40px;"
+                            src="{% static 'assets/images/user/avatar-1.jpg' %}" alt="activity-user">{{ key }}</h6>
+                      </td>
+                      <td>
+                        <h6 class="m-0">₹ {{ value }}</h6>
+                      </td>
+                    </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+
+          <div class="tab-pane fade" id="bowling" role="tabpanel" aria-labelledby="bowling-tab">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>Player</th>
+                  <th>Winnings</th>
+                  <th class="text-right"></th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for key, value in bowling_winnings.items %}
+                  <tr>
+                      <td>
+                        <h6 class="m-0"><img class="rounded-circle m-r-10" style="width:40px;"
+                            src="{% static 'assets/images/user/avatar-1.jpg' %}" alt="activity-user">{{ key }}</h6>
+                      </td>
+                      <td>
+                        <h6 class="m-0">₹ {{ value }}</h6>
+                      </td>
+                    </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+
+          <div class="tab-pane fade" id="sixes" role="tabpanel" aria-labelledby="sixes-tab">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>Player</th>
+                  <th>Winnings</th>
+                  <th class="text-right"></th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for key, value in sixes_winnings.items %}
+                  <tr>
+                      <td>
+                        <h6 class="m-0"><img class="rounded-circle m-r-10" style="width:40px;"
+                            src="{% static 'assets/images/user/avatar-1.jpg' %}" alt="activity-user">{{ key }}</h6>
+                      </td>
+                      <td>
+                        <h6 class="m-0">₹ {{ value }}</h6>
+                      </td>
+                    </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+
+          <div class="tab-pane fade" id="catches" role="tabpanel" aria-labelledby="catches-tab">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>Player</th>
+                  <th>Winnings</th>
+                  <th class="text-right"></th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for key, value in catches_winnings.items %}
+                  <tr>
+                      <td>
+                        <h6 class="m-0"><img class="rounded-circle m-r-10" style="width:40px;"
+                            src="{% static 'assets/images/user/avatar-1.jpg' %}" alt="activity-user">{{ key }}</h6>
+                      </td>
+                      <td>
+                        <h6 class="m-0">₹ {{ value }}</h6>
+                      </td>
+                    </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+
+          <div class="tab-pane fade" id="max_points" role="tabpanel" aria-labelledby="max_points-tab">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>Player</th>
+                  <th>Winnings</th>
+                  <th class="text-right"></th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for key, value in max_points_winnings.items %}
+                  <tr>
+                      <td>
+                        <h6 class="m-0"><img class="rounded-circle m-r-10" style="width:40px;"
+                            src="{% static 'assets/images/user/avatar-1.jpg' %}" alt="activity-user">{{ key }}</h6>
+                      </td>
+                      <td>
+                        <h6 class="m-0">₹ {{ value }}</h6>
+                      </td>
+                    </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+
+          <div class="tab-pane fade" id="max_wickets" role="tabpanel" aria-labelledby="max_wickets-tab">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>Player</th>
+                  <th>Winnings</th>
+                  <th class="text-right"></th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for key, value in max_wickets_winnings.items %}
+                  <tr>
+                      <td>
+                        <h6 class="m-0"><img class="rounded-circle m-r-10" style="width:40px;"
+                            src="{% static 'assets/images/user/avatar-1.jpg' %}" alt="activity-user">{{ key }}</h6>
+                      </td>
+                      <td>
+                        <h6 class="m-0">₹ {{ value }}</h6>
+                      </td>
+                    </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+
+      </div>
+    </div>
+
+  </div>
+
+{% endblock content %}

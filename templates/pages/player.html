@@ -1,0 +1,622 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% block breadcrumbs %}{% endblock breadcrumbs %}
+
+{% block content %}
+
+  <!-- [ Main Content ] start -->
+  <div class="row">
+    <div class="col-xl-12 col-md-12 m-b-30">
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link active show" id="kohli-tab" data-toggle="tab" href="#kohli" role="tab" aria-controls="kohli"
+            aria-selected="true">Kohli</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="sahoo-tab" data-toggle="tab" href="#sahoo" role="tab"
+              aria-controls="sahoo" aria-selected="false">Sahoo</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="sarthak_coe-tab" data-toggle="tab" href="#sarthak_coe" role="tab"
+              aria-controls="sarthak_coe" aria-selected="false">Sarthak COE</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="boss-tab" data-toggle="tab" href="#boss" role="tab"
+              aria-controls="boss" aria-selected="false">Boss</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="mittal-tab" data-toggle="tab" href="#mittal" role="tab"
+              aria-controls="mittal" aria-selected="false">Mittal</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="sandy-tab" data-toggle="tab" href="#sandy" role="tab"
+              aria-controls="sandy" aria-selected="false">Sandy</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="sarthak_it-tab" data-toggle="tab" href="#sarthak_it" role="tab"
+              aria-controls="sarthak_it" aria-selected="false">Sarthak IT</a>
+          </li>
+      </ul>
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade active show" id="kohli" role="tabpanel" aria-labelledby="kohli-tab">
+            <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th>Overall Points</th>
+                    <th>{{ kohli_points.12.1 }}</th>
+                    <th class="text-right"></th>
+                  </tr>
+                </thead>
+              </table>
+
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>Batsmen</th>
+                <th>Points</th>
+                <th class="text-right"></th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for row in kohli_points %}
+                {% if forloop.counter >= 0 and forloop.counter <= 5 %}
+                    <tr>
+                        <td>
+                        <h6 class="m-0"><img class="rounded-circle m-r-10" style="width:40px;"
+                            src="{% static 'assets/images/user/avatar-1.jpg' %}" alt="activity-user">{{ row.0 }}</h6>
+                        </td>
+                        <td>
+                        <h6 class="m-0">{{ row.1 }}</h6>
+                        </td>
+                    </tr>
+                {% endif %}
+                {% if forloop.counter == 6 %}
+                <tr>
+                    <td>
+                    <h6 class="m-0"><b>Total Batting Points</b></h6>
+                    </td>
+                    <td>
+                    <h6 class="m-0"><b>{{ row.1 }}</b></h6>
+                    </td>
+                </tr>
+                {% endif %}
+              {% endfor %}
+            </tbody>
+          </table>
+
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>Bowlers</th>
+                <th>Points</th>
+                <th class="text-right"></th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for row in kohli_points %}
+                {% if forloop.counter >= 7 and forloop.counter <= 11 %}
+                    <tr>
+                        <td>
+                        <h6 class="m-0"><img class="rounded-circle m-r-10" style="width:40px;"
+                            src="{% static 'assets/images/user/avatar-1.jpg' %}" alt="activity-user">{{ row.0 }}</h6>
+                        </td>
+                        <td>
+                        <h6 class="m-0">{{ row.1 }}</h6>
+                        </td>
+                    </tr>
+                {% endif %}
+                {% if forloop.counter == 12 %}
+                <tr>
+                    <td>
+                    <h6 class="m-0"><b>Total Bowling Points</b></h6>
+                    </td>
+                    <td>
+                    <h6 class="m-0"><b>{{ row.1 }}</b></h6>
+                    </td>
+                </tr>
+                {% endif %}
+              {% endfor %}
+            </tbody>
+          </table>
+
+        </div>
+
+          <div class="tab-pane fade" id="sahoo" role="tabpanel" aria-labelledby="sahoo-tab">
+            <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th>Overall Points</th>
+                    <th>{{ sahoo_points.12.1 }}</th>
+                    <th class="text-right"></th>
+                  </tr>
+                </thead>
+              </table>
+
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>Batsmen</th>
+                <th>Points</th>
+                <th class="text-right"></th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for row in sahoo_points %}
+                {% if forloop.counter >= 0 and forloop.counter <= 5 %}
+                    <tr>
+                        <td>
+                        <h6 class="m-0"><img class="rounded-circle m-r-10" style="width:40px;"
+                            src="{% static 'assets/images/user/avatar-1.jpg' %}" alt="activity-user">{{ row.0 }}</h6>
+                        </td>
+                        <td>
+                        <h6 class="m-0">{{ row.1 }}</h6>
+                        </td>
+                    </tr>
+                {% endif %}
+                {% if forloop.counter == 6 %}
+                <tr>
+                    <td>
+                    <h6 class="m-0"><b>Total Batting Points</b></h6>
+                    </td>
+                    <td>
+                    <h6 class="m-0"><b>{{ row.1 }}</b></h6>
+                    </td>
+                </tr>
+                {% endif %}
+              {% endfor %}
+            </tbody>
+          </table>
+
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>Bowlers</th>
+                <th>Points</th>
+                <th class="text-right"></th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for row in sahoo_points %}
+                {% if forloop.counter >= 7 and forloop.counter <= 11 %}
+                    <tr>
+                        <td>
+                        <h6 class="m-0"><img class="rounded-circle m-r-10" style="width:40px;"
+                            src="{% static 'assets/images/user/avatar-1.jpg' %}" alt="activity-user">{{ row.0 }}</h6>
+                        </td>
+                        <td>
+                        <h6 class="m-0">{{ row.1 }}</h6>
+                        </td>
+                    </tr>
+                {% endif %}
+                {% if forloop.counter == 12 %}
+                <tr>
+                    <td>
+                    <h6 class="m-0"><b>Total Bowling Points</b></h6>
+                    </td>
+                    <td>
+                    <h6 class="m-0"><b>{{ row.1 }}</b></h6>
+                    </td>
+                </tr>
+                {% endif %}
+              {% endfor %}
+            </tbody>
+          </table>
+          </div>
+
+          <div class="tab-pane fade" id="sarthak_coe" role="tabpanel" aria-labelledby="sarthak_coe-tab">
+            <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th>Overall Points</th>
+                    <th>{{ sarthak_coe_points.12.1 }}</th>
+                    <th class="text-right"></th>
+                  </tr>
+                </thead>
+              </table>
+
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>Batsmen</th>
+                <th>Points</th>
+                <th class="text-right"></th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for row in sarthak_coe_points %}
+                {% if forloop.counter >= 0 and forloop.counter <= 5 %}
+                    <tr>
+                        <td>
+                        <h6 class="m-0"><img class="rounded-circle m-r-10" style="width:40px;"
+                            src="{% static 'assets/images/user/avatar-1.jpg' %}" alt="activity-user">{{ row.0 }}</h6>
+                        </td>
+                        <td>
+                        <h6 class="m-0">{{ row.1 }}</h6>
+                        </td>
+                    </tr>
+                {% endif %}
+                {% if forloop.counter == 6 %}
+                <tr>
+                    <td>
+                    <h6 class="m-0"><b>Total Batting Points</b></h6>
+                    </td>
+                    <td>
+                    <h6 class="m-0"><b>{{ row.1 }}</b></h6>
+                    </td>
+                </tr>
+                {% endif %}
+              {% endfor %}
+            </tbody>
+          </table>
+
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>Bowlers</th>
+                <th>Points</th>
+                <th class="text-right"></th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for row in sarthak_coe_points %}
+                {% if forloop.counter >= 7 and forloop.counter <= 11 %}
+                    <tr>
+                        <td>
+                        <h6 class="m-0"><img class="rounded-circle m-r-10" style="width:40px;"
+                            src="{% static 'assets/images/user/avatar-1.jpg' %}" alt="activity-user">{{ row.0 }}</h6>
+                        </td>
+                        <td>
+                        <h6 class="m-0">{{ row.1 }}</h6>
+                        </td>
+                    </tr>
+                {% endif %}
+                {% if forloop.counter == 12 %}
+                <tr>
+                    <td>
+                    <h6 class="m-0"><b>Total Bowling Points</b></h6>
+                    </td>
+                    <td>
+                    <h6 class="m-0"><b>{{ row.1 }}</b></h6>
+                    </td>
+                </tr>
+                {% endif %}
+              {% endfor %}
+            </tbody>
+          </table>
+          </div>
+
+          <div class="tab-pane fade" id="boss" role="tabpanel" aria-labelledby="boss-tab">
+            <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th>Overall Points</th>
+                    <th>{{ boss_points.12.1 }}</th>
+                    <th class="text-right"></th>
+                  </tr>
+                </thead>
+              </table>
+
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>Batsmen</th>
+                <th>Points</th>
+                <th class="text-right"></th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for row in boss_points %}
+                {% if forloop.counter >= 0 and forloop.counter <= 5 %}
+                    <tr>
+                        <td>
+                        <h6 class="m-0"><img class="rounded-circle m-r-10" style="width:40px;"
+                            src="{% static 'assets/images/user/avatar-1.jpg' %}" alt="activity-user">{{ row.0 }}</h6>
+                        </td>
+                        <td>
+                        <h6 class="m-0">{{ row.1 }}</h6>
+                        </td>
+                    </tr>
+                {% endif %}
+                {% if forloop.counter == 6 %}
+                <tr>
+                    <td>
+                    <h6 class="m-0"><b>Total Batting Points</b></h6>
+                    </td>
+                    <td>
+                    <h6 class="m-0"><b>{{ row.1 }}</b></h6>
+                    </td>
+                </tr>
+                {% endif %}
+              {% endfor %}
+            </tbody>
+          </table>
+
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>Bowlers</th>
+                <th>Points</th>
+                <th class="text-right"></th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for row in boss_points %}
+                {% if forloop.counter >= 7 and forloop.counter <= 11 %}
+                    <tr>
+                        <td>
+                        <h6 class="m-0"><img class="rounded-circle m-r-10" style="width:40px;"
+                            src="{% static 'assets/images/user/avatar-1.jpg' %}" alt="activity-user">{{ row.0 }}</h6>
+                        </td>
+                        <td>
+                        <h6 class="m-0">{{ row.1 }}</h6>
+                        </td>
+                    </tr>
+                {% endif %}
+                {% if forloop.counter == 12 %}
+                <tr>
+                    <td>
+                    <h6 class="m-0"><b>Total Bowling Points</b></h6>
+                    </td>
+                    <td>
+                    <h6 class="m-0"><b>{{ row.1 }}</b></h6>
+                    </td>
+                </tr>
+                {% endif %}
+              {% endfor %}
+            </tbody>
+          </table>
+          </div>
+
+          <div class="tab-pane fade" id="mittal" role="tabpanel" aria-labelledby="mittal-tab">
+            <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th>Overall Points</th>
+                    <th>{{ mittal_points.12.1 }}</th>
+                    <th class="text-right"></th>
+                  </tr>
+                </thead>
+              </table>
+
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>Batsmen</th>
+                <th>Points</th>
+                <th class="text-right"></th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for row in mittal_points %}
+                {% if forloop.counter >= 0 and forloop.counter <= 5 %}
+                    <tr>
+                        <td>
+                        <h6 class="m-0"><img class="rounded-circle m-r-10" style="width:40px;"
+                            src="{% static 'assets/images/user/avatar-1.jpg' %}" alt="activity-user">{{ row.0 }}</h6>
+                        </td>
+                        <td>
+                        <h6 class="m-0">{{ row.1 }}</h6>
+                        </td>
+                    </tr>
+                {% endif %}
+                {% if forloop.counter == 6 %}
+                <tr>
+                    <td>
+                    <h6 class="m-0"><b>Total Batting Points</b></h6>
+                    </td>
+                    <td>
+                    <h6 class="m-0"><b>{{ row.1 }}</b></h6>
+                    </td>
+                </tr>
+                {% endif %}
+              {% endfor %}
+            </tbody>
+          </table>
+
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>Bowlers</th>
+                <th>Points</th>
+                <th class="text-right"></th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for row in mittal_points %}
+                {% if forloop.counter >= 7 and forloop.counter <= 11 %}
+                    <tr>
+                        <td>
+                        <h6 class="m-0"><img class="rounded-circle m-r-10" style="width:40px;"
+                            src="{% static 'assets/images/user/avatar-1.jpg' %}" alt="activity-user">{{ row.0 }}</h6>
+                        </td>
+                        <td>
+                        <h6 class="m-0">{{ row.1 }}</h6>
+                        </td>
+                    </tr>
+                {% endif %}
+                {% if forloop.counter == 12 %}
+                <tr>
+                    <td>
+                    <h6 class="m-0"><b>Total Bowling Points</b></h6>
+                    </td>
+                    <td>
+                    <h6 class="m-0"><b>{{ row.1 }}</b></h6>
+                    </td>
+                </tr>
+                {% endif %}
+              {% endfor %}
+            </tbody>
+          </table>
+          </div>
+
+          <div class="tab-pane fade" id="sandy" role="tabpanel" aria-labelledby="sandy-tab">
+            <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th>Overall Points</th>
+                    <th>{{ sandy_points.12.1 }}</th>
+                    <th class="text-right"></th>
+                  </tr>
+                </thead>
+              </table>
+
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>Batsmen</th>
+                <th>Points</th>
+                <th class="text-right"></th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for row in sandy_points %}
+                {% if forloop.counter >= 0 and forloop.counter <= 5 %}
+                    <tr>
+                        <td>
+                        <h6 class="m-0"><img class="rounded-circle m-r-10" style="width:40px;"
+                            src="{% static 'assets/images/user/avatar-1.jpg' %}" alt="activity-user">{{ row.0 }}</h6>
+                        </td>
+                        <td>
+                        <h6 class="m-0">{{ row.1 }}</h6>
+                        </td>
+                    </tr>
+                {% endif %}
+                {% if forloop.counter == 6 %}
+                <tr>
+                    <td>
+                    <h6 class="m-0"><b>Total Batting Points</b></h6>
+                    </td>
+                    <td>
+                    <h6 class="m-0"><b>{{ row.1 }}</b></h6>
+                    </td>
+                </tr>
+                {% endif %}
+              {% endfor %}
+            </tbody>
+          </table>
+
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>Bowlers</th>
+                <th>Points</th>
+                <th class="text-right"></th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for row in sandy_points %}
+                {% if forloop.counter >= 7 and forloop.counter <= 11 %}
+                    <tr>
+                        <td>
+                        <h6 class="m-0"><img class="rounded-circle m-r-10" style="width:40px;"
+                            src="{% static 'assets/images/user/avatar-1.jpg' %}" alt="activity-user">{{ row.0 }}</h6>
+                        </td>
+                        <td>
+                        <h6 class="m-0">{{ row.1 }}</h6>
+                        </td>
+                    </tr>
+                {% endif %}
+                {% if forloop.counter == 12 %}
+                <tr>
+                    <td>
+                    <h6 class="m-0"><b>Total Bowling Points</b></h6>
+                    </td>
+                    <td>
+                    <h6 class="m-0"><b>{{ row.1 }}</b></h6>
+                    </td>
+                </tr>
+                {% endif %}
+              {% endfor %}
+            </tbody>
+          </table>
+          </div>
+
+          <div class="tab-pane fade" id="sarthak_it" role="tabpanel" aria-labelledby="sarthak_it-tab">
+            <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th>Overall Points</th>
+                    <th>{{ sarthak_it_points.12.1 }}</th>
+                    <th class="text-right"></th>
+                  </tr>
+                </thead>
+              </table>
+
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>Batsmen</th>
+                <th>Points</th>
+                <th class="text-right"></th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for row in sarthak_it_points %}
+                {% if forloop.counter >= 0 and forloop.counter <= 5 %}
+                    <tr>
+                        <td>
+                        <h6 class="m-0"><img class="rounded-circle m-r-10" style="width:40px;"
+                            src="{% static 'assets/images/user/avatar-1.jpg' %}" alt="activity-user">{{ row.0 }}</h6>
+                        </td>
+                        <td>
+                        <h6 class="m-0">{{ row.1 }}</h6>
+                        </td>
+                    </tr>
+                {% endif %}
+                {% if forloop.counter == 6 %}
+                <tr>
+                    <td>
+                    <h6 class="m-0"><b>Total Batting Points</b></h6>
+                    </td>
+                    <td>
+                    <h6 class="m-0"><b>{{ row.1 }}</b></h6>
+                    </td>
+                </tr>
+                {% endif %}
+              {% endfor %}
+            </tbody>
+          </table>
+
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>Bowlers</th>
+                <th>Points</th>
+                <th class="text-right"></th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for row in sarthak_it_points %}
+                {% if forloop.counter >= 7 and forloop.counter <= 11 %}
+                    <tr>
+                        <td>
+                        <h6 class="m-0"><img class="rounded-circle m-r-10" style="width:40px;"
+                            src="{% static 'assets/images/user/avatar-1.jpg' %}" alt="activity-user">{{ row.0 }}</h6>
+                        </td>
+                        <td>
+                        <h6 class="m-0">{{ row.1 }}</h6>
+                        </td>
+                    </tr>
+                {% endif %}
+                {% if forloop.counter == 12 %}
+                <tr>
+                    <td>
+                    <h6 class="m-0"><b>Total Bowling Points</b></h6>
+                    </td>
+                    <td>
+                    <h6 class="m-0"><b>{{ row.1 }}</b></h6>
+                    </td>
+                </tr>
+                {% endif %}
+              {% endfor %}
+            </tbody>
+          </table>
+          </div>
+
+      </div>
+    </div>
+
+  </div>
+
+{% endblock content %}

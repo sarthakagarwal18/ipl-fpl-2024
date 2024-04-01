@@ -1,0 +1,62 @@
+{% load i18n static admin_datta %}
+
+<nav class="pcoded-navbar">
+  <div class="navbar-wrapper">
+    <div class="navbar-brand header-logo">
+      <a href="{% url 'index' %}" class="b-brand">
+        <div class="b-bg">
+          <i class="feather icon-trending-up"></i>
+        </div>
+        <span class="b-title">IPL FPL 2024</span>
+      </a>
+      <a class="mobile-menu" id="mobile-collapse" href="javascript:"><span></span></a>
+    </div>
+    <div class="navbar-content scroll-div">
+      <ul class="nav pcoded-inner-navbar">
+        <li class="nav-item pcoded-menu-caption">
+          <label>Navigation</label>
+        </li>
+        <li data-username="dashboard" class="nav-item {% if 'index' in segment %}active{% endif %}">
+          <a href="{% url 'index' %}" class="nav-link ">
+            <span class="pcoded-micon"><i class="feather icon-trending-up"></i></span><span class="pcoded-mtext">Points Leaderboard</span>
+          </a>
+        </li>
+        <li data-username="Winnings" class="nav-item {% if 'winnings' in segment %}active{% endif %}">
+          <a href="{% url 'winnings' %}" class="nav-link ">
+            <span class="pcoded-micon"><i class="feather icon-trending-up"></i></span><span class="pcoded-mtext">Winnings Leaderboard</span>
+          </a>
+        </li>
+        <li data-username="Player View" class="nav-item {% if 'player' in segment %}active{% endif %}">
+          <a href="{% url 'player' %}" class="nav-link ">
+            <span class="pcoded-micon"><i class="feather icon-trending-up"></i></span><span class="pcoded-mtext">Player View</span>
+          </a>
+        </li>
+        <li data-username="Substitutions" class="nav-item {% if 'subs' in segment %}active{% endif %}">
+          <a href="{% url 'subs' %}" class="nav-link ">
+            <span class="pcoded-micon"><i class="feather icon-trending-up"></i></span><span class="pcoded-mtext">Substitutions</span>
+          </a>
+        </li>
+        <li data-username="Overall Points Chart" class="nav-item {% if 'chart' in segment %}active{% endif %}">
+          <a href="{% url 'chart' %}" class="nav-link ">
+            <span class="pcoded-micon"><i class="feather icon-trending-up"></i></span><span class="pcoded-mtext">Overall Points Chart</span>
+          </a>
+        </li>
+        <li data-username="Teams" class="nav-item {% if 'teams' in segment %}active{% endif %}">
+          <a href="{% url 'teams' %}" class="nav-link ">
+            <span class="pcoded-micon"><i class="feather icon-trending-up"></i></span><span class="pcoded-mtext">Teams</span>
+          </a>
+        </li>
+        <li data-username="Auction" class="nav-item {% if 'auction' in segment %}active{% endif %}">
+          <a href="{% url 'auction' %}" class="nav-link ">
+            <span class="pcoded-micon"><i class="feather icon-trending-up"></i></span><span class="pcoded-mtext">Auction</span>
+          </a>
+        </li>
+        <li data-username="Rules" class="nav-item {% if 'rules' in segment %}active{% endif %}">
+          <a href="{% url 'rules' %}" class="nav-link ">
+            <span class="pcoded-micon"><i class="feather icon-trending-up"></i></span><span class="pcoded-mtext">Rules</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
